@@ -1,0 +1,643 @@
+:root {
+    --main-bkg-color: rgba(17, 17, 17, .3);
+    --default-blur: .14vw;
+    --default-box-shadow: inset 0px 0px 12px 0px rgba(17, 17, 17, 0.25);
+    --green-color: #15DB95; /*#3AFE32*/
+    --yellow-color: #FED614;
+    --blue-color: #06D2EA;
+    --red-color: #FC4445; /*#F33439*/
+    --violet-color: #8860D0;
+    --purple-color: #E64398;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+    user-select: none;
+    overflow: hidden;
+
+    /*background: url('https://cdn.discordapp.com/attachments/766654167598366720/766654206412193802/unknown.png');
+    background: url('https://cdn.discordapp.com/attachments/766654187357601835/766654201291210752/unknown.png');
+    background: url('https://cdn.discordapp.com/attachments/676337933220839435/766323325911695410/unknown.png');
+    background: url('https://cdn.discordapp.com/attachments/766654187357601835/766654201291210752/unknown.png');*/
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.content {
+    display: flex;
+    width: 98vw;
+    height: 96vh;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.watermark {
+    display: flex;
+    width: 100vw;
+    align-items: flex-start;
+    justify-content: center;
+    position: fixed;
+}
+
+.watermark .container {
+    display: flex;
+    padding: .75vh 1vw;
+    align-items: center;
+    justify-content: center;
+    background: var(--main-bkg-color);
+    border-radius: .5vw;
+    box-shadow: var(--default-box-shadow);
+}
+
+.watermark .container p {
+    font-size: 1vw;
+    font-weight: 600;
+    color: #FFF;
+}
+
+.watermark .container span {
+    margin-left: .25vw;
+    font-weight: 300;
+}
+
+.achievement {
+    position: fixed;
+    display: none;
+    width: 25vw;
+    padding: .75vh 1vw;
+    margin: -12vh 37.5vw;
+    background: var(--main-bkg-color);
+    border-radius: .5vw;
+    box-shadow: var(--default-box-shadow);
+    color: white;
+}
+
+.achievement-container {
+    display: flex;
+    float: left;
+    width: 25vw;
+    color: white;
+    align-items: center;
+    justify-content: center;
+}
+
+.achievement-container img {
+    width: 4.5vw;
+    margin: .25vw .25vw .25vw 0;
+}
+
+.achievement-container p {
+    font-size: 1vw;
+    margin: 0 1.25vw;
+}
+
+.r1, .r2, .r3, .r4 {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.r1 {align-items: center;}
+
+.r2 {margin-top: 1vh;}
+
+.r3 {margin-top: 2vh;}
+
+.r4 {margin-top: .75vh;}
+
+.r5 {
+    display: flex;
+    margin: 1vh 0 0 16.5vw;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.square {
+    display: flex;
+    width: 2.2vw;
+    height: 2.2vw;
+    align-items: center;
+    justify-content: center;
+    background: var(--main-bkg-color);
+    border-radius: .5vw;
+}
+
+.premium {
+    display: none;
+    box-shadow: var(--default-box-shadow);
+}
+
+.fixedtxt, .premium, .lvl {margin-right: .5vw;
+}
+
+.square i, .square p {
+    font-size: 1.1vw;
+    color: var(--green-color);
+}
+
+.square p {font-weight: 500;}
+
+.lvl {border: .16vw solid var(--green-color);}
+
+.money {
+    display: flex;
+    padding: 0 1vw;
+    height: 2.2vw;
+    align-items: center;
+    justify-content: center;
+    background: var(--main-bkg-color);
+    border-radius: .5vw;
+    box-shadow: var(--default-box-shadow);
+}
+
+.money p {
+    font-size: 1.4vw;
+    color: var(--green-color);
+}
+
+.money span {font-weight: 500;}
+
+.fixedtxt {
+    position: fixed;
+    display: none;
+    margin-top: -6vw;
+    max-width: 22vw; height: 1.75vw;
+    right: 15.65vw;
+    align-items: center;
+    background: var(--main-bkg-color);
+    box-shadow: var(--default-box-shadow);
+    border-radius: .5vw;
+}
+
+.fixedtxt p {
+    font-size: .9vw;
+    color: #fff;
+    padding: 1vw;
+}
+
+.circle {
+    display: flex;
+    width: 2.25vw; height: 2.25vw;
+    /*width: 2.75vw;
+    height: 2.75vw;*/
+    align-items: center;
+    justify-content: center;
+    background: var(--main-bkg-color);
+    border-radius: 50%;
+    backdrop-filter: var(--default-blur);
+    box-shadow: var(--default-box-shadow);
+    cursor: pointer;
+}
+
+.circle i {
+    font-size: 1.25vw;
+    color: #FFF;
+}
+
+.circle-md {
+    display: flex;
+    margin: 0 .5vw 0 1.25vw;
+    width: 2vw;
+    height: 2vw;
+    align-items: center;
+    justify-content: center;
+    background: var(--main-bkg-color);
+    border-radius: 50%;
+}
+
+.circle-md i {
+    font-size: 1.1vw;
+    color: #FFF;
+}
+
+.circle-sm {
+    display: flex;
+    width: 1.5vw;
+    height: 1.5vw;
+    align-items: center;
+    justify-content: center;
+    background: var(--main-bkg-color);
+    border-radius: 50%;
+}
+
+.radio {
+    display: none;
+    margin-right: .5vw;
+    border: .17vw solid var(--violet-color);
+}
+
+.circle {
+    margin-right: .5vw;
+    border: .16vw solid var(--yellow-color);
+}
+
+.eat {
+    margin-right: .5vw;
+    border: .16vw solid var(--yellow-color);
+}
+
+.eat i {
+
+}
+
+.drink {border: .16vw solid var(--blue-color);}
+
+.drink i {
+}
+
+.voice {
+    margin-right: .5vw;
+    border: .17vw solid #FF0000;
+    color: #FF0000;
+}
+
+.voice i {color: #FF0000;}
+
+.range {
+    margin-right: .5vw;
+    border: .17vw solid #FF0000;
+    color: #FF0000;
+}
+
+.range i {
+    color: #FF0000;
+}
+
+.admin {
+    border: .17vw solid var(--purple-color);
+    color: var(--purple-color);
+}
+
+.admin i {
+    margin-left: .15vw;
+    color: var(--purple-color);
+}
+
+.security .circle-md {border: .16vw solid var(--blue-color);}
+
+.speed .circle-md {border: .16vw solid var(--yellow-color);}
+
+.fuel .circle-md {border: .16vw solid var(--green-color);}
+
+.km .circle-md, .damage .circle-md {border: .16vw solid var(--red-color);}
+
+.fuel, .speed, .km, .damage {
+    display: flex;
+    align-items: center;
+}
+
+.label {
+    display: flex;
+    margin-right: .5vw;
+    padding: 0.5vh .75vw;
+    align-items: center;
+    justify-content: center;
+    background: var(--main-bkg-color);
+    border-radius: .5vw;
+    backdrop-filter: var(--default-blur);
+    box-shadow: var(--default-box-shadow);
+}
+
+.label p {
+    font-size: .8vw;
+    font-weight: 500;
+    color: #FFF;
+}
+
+.id {
+    border: .15vw solid var(--green-color);
+    font-size: .85vw;
+    font-weight: 600;
+    color: #FFF;
+}
+
+.ping {
+    border: .1em solid #FF0000;
+    color: #FF0000;
+}
+
+.direction {
+    display: flex;
+    margin-right: .5vw;
+    padding: 0 .75vw;
+    width: 4.75vw;
+    height: 2.75vw;
+    align-items: center;
+    justify-content: center;
+    background: var(--main-bkg-color);
+    border-radius: .5vw;
+    backdrop-filter: var(--default-blur);
+    box-shadow: var(--default-box-shadow);
+}
+
+.direction p {
+    font-size: 2.1vw;
+    font-weight: 600;
+    color: #FFF;
+}
+
+.r5 .left .r5-1 {
+    display: flex;
+    align-items: center;
+}
+
+.r5 .left .zone {
+    font-size: 1.17vw;
+    font-weight: 600;
+}
+
+.r5 .left .street {
+    font-size: 0.92vw;
+    font-weight: 300;
+}
+
+.r5 .left .r5-2 {
+    display: flex;
+    margin: 1vh .5vw 0 0;
+    padding: 0 .75vw;
+    height: 3.5vw;
+    flex-direction: column; justify-content: center;
+    background: var(--main-bkg-color);
+    border-radius: .5vw;
+    backdrop-filter: var(--default-blur);
+    box-shadow: var(--default-box-shadow);
+    color: #FFF;
+}
+
+.right {display: flex;}
+
+.r5 .right {
+    flex-direction: column;
+}
+
+.weapon {
+    display: flex;
+    align-items: center; justify-content: flex-end;
+}
+
+
+.weapon img[src*="poolcue"] {
+    height: 2.5vh;
+}
+
+
+.weapon img {
+    margin: 0 1vw -16vh 0;
+    height: 5vh;
+    opacity: 0;
+}
+
+.weapon .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.weapon .info .label:first-child {opacity: 0;}
+
+.weapon .info .label:first-child p {font-weight: 900;}
+
+.weapon .info .label:last-child {
+    margin-top: .5vh;
+    opacity: 0;
+}
+
+.weapon .info .label:last-child p {font-weight: 400;}
+
+.vehicle-info {
+    display: flex;
+    margin: 4vh 0 10vh 0;
+}
+
+.security {
+    display: flex;
+    margin-right: .5vw;
+    width: 3.5vw;
+    height: 3.5vw;
+    align-items: center;
+    justify-content: center;
+    background: var(--main-bkg-color);
+    border-radius: .5vw;
+    backdrop-filter: var(--default-blur);
+    box-shadow: var(--default-box-shadow);
+    color: #FFF;
+}
+
+.vehicle {
+    display: flex;
+    padding: 0 .75vw;
+    height: 3.5vw;
+    align-items: center;
+    background: var(--main-bkg-color);
+    border-radius: .5vw;
+    backdrop-filter: var(--default-blur);
+    box-shadow: var(--default-box-shadow);
+    color: #FFF;
+}
+
+.speed, .fuel, .km, .damage {display: flex;}
+
+.fuel p, .damage p {
+    font-size: 1.05vw;
+    font-weight: 600;
+}
+
+.txt p:first-child {
+    font-size: 1.05vw;
+    font-weight: 600;
+    line-height: 2vh;
+}
+
+.txt p:last-child {
+    font-size: 1.05vw;
+    font-weight: 600;
+    line-height: 2vh;
+}
+
+.alarm {
+    display: flex;
+    margin: -1.2vh 0 0 .7vw;
+    width: .95vw;
+    height: .95vw;
+    align-items: center;
+    justify-content: center;
+    background: var(--main-bkg-color);
+    border: .15vw solid #0078FF;
+    border-radius: 50%;
+    position: fixed;
+}
+
+.alarm p {font-size: .75vw;}
+
+.radio .channel {
+    display: flex;
+    margin: -1.7vh 0 0 .8vw;
+    width: .95vw;
+    height: .95vw;
+    align-items: center;
+    justify-content: center;
+    background: var(--main-bkg-color);
+    border: .25vw solid var(--violet-color);
+    border-radius: 50%;
+    position: fixed;
+}
+
+.radio .channel p {
+    font-size: 1.05vw;
+    color: #FFF;
+}
+
+.center {
+    margin-left: -24vw;
+    position: fixed;
+    bottom: 50%;
+}
+
+.center .deal {
+    display: flex;
+    margin-bottom: .5vh;
+    padding: 1vw;
+    align-items: center; justify-content: center;
+    background: var(--main-bkg-color);
+    border-radius: .6vw .6vw 0 0;
+}
+
+.center .deal .icon {
+    display: flex;
+    margin-right: 1vw;
+    width: 3.5vw; height: 3.5vw;
+    align-items: center; justify-content: center;
+    background: var(--main-bkg-color);
+    border: .2vw solid var(--green-color);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.center .deal .icon i {
+    margin-bottom: -5px;
+    font-size: 1.85vw;
+    color: var(--green-color);
+}
+
+.center .deal span {
+    width: 16vw;
+    font-size: .9vw;
+    color: #FFF;
+}
+
+.center .progress-bar {
+    margin: -.65vh 0 0 0;
+    width: 22.5vw; height: .55vh;
+    background: var(--green-color);
+    border-radius: .5vw;
+}
+
+.center .instructions {
+    display: flex;
+    margin-top: .85vh;
+    justify-content: flex-end;
+    font-size: 1.1vh;
+    color: yellow;
+    opacity: .75;
+}
+
+.big-noty {
+    position: fixed;
+    display: flex;
+    margin-left: -32vw; padding: 1vw;
+    width: 30vw; max-height: 52vh;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    background: var(--main-bkg-color);
+    top: 30%;
+    transform: translate(0, -45%);
+    border-radius: 1vw;
+    color: #fff;
+}
+
+.big-noty h1, .big-noty h2, .big-noty p { margin-bottom: .4vw; }
+
+.big-noty h1 {
+    font-size: 1.7vw;
+    line-height: 1.7vw;
+}
+
+.big-noty h2 {
+    font-size: 1.25vw;
+    line-height: 1.25vw;
+}
+
+.big-noty p {
+    font-size: .85vw;
+    text-align: left;
+}
+
+.instructions {
+    display: flex;
+    margin-top: .85vh;
+    justify-content: flex-end;
+    font-size: 1.1vh;
+    color: yellow;
+    opacity: .75;
+}
+
+.r4 {
+    display: flex;
+    position: fixed;
+    top: 14vw;
+    right: 1vw;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.noty {
+    display: flex;
+    max-width: 26.75vw;
+    margin: 0 -30vw 1vh 0;
+    padding: .75vw;
+    align-items: center;
+    background: var(--main-bkg-color);
+    border-radius: .5vw;
+    border-width: .2vw;
+    border-style: solid;
+}
+
+.noty .icon {
+    display: flex;
+    width: 1.75vw; height: 1.75vw;
+    margin-left: -1.75vw;
+    position: fixed;
+    align-items: center; justify-content: center;
+    border-radius: .5vw;
+}
+
+.noty .icon i {
+    margin-bottom: -.4vh;
+    font-size: 1.1vw;
+    color: #FFF;
+}
+
+.noty span.msg {
+    margin-left: .5vw;
+    font-size: .86vw;
+    color: #FFF;
+}
+
+.noty span.msg span {
+    margin: 0;
+    padding: 0 .3vw;
+    font-weight: 500;
+    border-radius: .3vw;
+}
